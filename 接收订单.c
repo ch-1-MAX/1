@@ -36,6 +36,10 @@ int main()
 		{
 			break;
 		}
+		else
+		{
+			printf("请重新输入");
+		}
 	}
 
 
