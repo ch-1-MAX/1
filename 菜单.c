@@ -133,7 +133,7 @@ else
     if(i==3)
     {
         printf("you are a bad girl");
-        goto a;
+        return 0;
     }
     else
     {
@@ -162,10 +162,14 @@ fun3();
     fun4();
     case 5:
     printf("退出运行\n");
-    goto a;
+    break;
 }
+    if(select==5)
+    {
+        break;
+    }
 }
 
-a:
+
     return 0;
 }
