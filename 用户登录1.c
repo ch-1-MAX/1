@@ -5,7 +5,7 @@ struct  Student
     char name[100];
     char id[100];
     char gender[100];
-    double hight;
+    double high;
 };
 int judge(char*a,char *b)
 {
@@ -33,8 +33,8 @@ void showMenu(struct Student*p)
     printf("1.姓名：%s\n",p->name);
     printf("2.学号:%s\n",p->id);
     printf("3.性别：%s\n",p->gender);
-    printf("4.身高：%ld\n",p->hight);
-    priintf("5.退出登录\n");
+    printf("4.身高：%ld\n",p->high);
+    printf("5.退出登录\n");
 }
 int main()
 {
@@ -49,9 +49,10 @@ for(int i=1;i<=5;i++)
     printf("请输入密码:\n");
     char password[100];
     scanf("%s",password);
-if(!strcmp(username,rightUsername)&&!strcmp(password,rightpassword))
+if(judge(username,rightUsername)&&judge(password,rightpassword))
 {
 printf("登录成功\n");
+    
 return 0;
 }
 else
@@ -65,29 +66,6 @@ else
         printf("用户名或密码输入错误，还有%d次机会",5-i);
     }
 }
-//信息初始化
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 return 0;
 }
