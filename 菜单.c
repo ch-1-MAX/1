@@ -1,16 +1,16 @@
 #include<stdio.h>
-int judge(char*a,char *b)
+int judge(char* a, char* b)
 {
-    int i=0;
-    while(a[i]!='\0'&&b[i]!='\0')//从第0个字符开始对比直到结束
+    int i = 0;
+    while (a[i] != '\0' && b[i] != '\0')//从第0个字符开始对比直到结束
     {
-        if(a[i]!=b[i])//不一样返回0
+        if (a[i] != b[i])//不一样返回0
         {
             return 0;
         }
         i++;//一样对比下一个
     }
-    if(a[i]=='\0'&&b[i]=='\0')
+    if (a[i] == '\0' && b[i] == '\0')
     {
         return 1;
     }
@@ -33,18 +33,18 @@ void fun1()
     int n;
     int m;
     printf("请输入一个正整数:\n");
-    scanf("%d",&a);
-    if(a<=0)
+    scanf("%d", &a);
+    if (a <= 0)
     {
         printf("Care for mentally retarded children,we stay together.");
-return;
+        return;
     }
-    else{
-        for(int n=1;n<=a;n++)
+    else {
+        for (int n = 1;n <= a;n++)
         {
-            for(m=1;m<=n;m++)
+            for (m = 1;m <= n;m++)
             {
-                printf("%d*%d=%d\t",m,n,m*n);
+                printf("%d*%d=%d\t", m, n, m * n);
             }
             printf("\n");
         }
@@ -60,116 +60,123 @@ void fun3()
     char opt;
     printf("以后有钱想干什么：\nA.找女朋友  B.买同济版高等数学好好学习\n");
     getchar();//回车空格
-    scanf("%c",&opt);
-    if(opt=='A')
+    scanf("%c", &opt);
+    if (opt == 'A')
     {
         fun2();
     }
-    else if(opt=='B')
+    else if (opt == 'B')
     {
         fun1();
+    }
+    else
+    {
+        printf("输入错误请重新输入\n");
     }
 
 };
 void fun4()
 {
-char opt;
-printf("你为什么学技术\n");
-printf("A:为了变有钱\nB:因为我热爱学习\n");
-getchar();
-scanf("%c",&opt);
-if(opt=='A')
-{
-    fun2();
-}
-else if(opt=='B')
-{
-
-    int a;
-    int n;
-    int m;
-    printf("请输入一个正整数:\n");
-    scanf("%d",&a);
-    if(a<=0)
+    char opt;
+    printf("你为什么学技术\n");
+    printf("A:为了变有钱\nB:因为我热爱学习\n");
+    getchar();
+    scanf("%c", &opt);
+    if (opt == 'A')
     {
-        printf("Care for mentally retarded children,we stay together.You are such a sweet little fool.");
-return;
+        fun2();
     }
-    else{
-        for(int n=1;n<=a;n++)
+    else if (opt == 'B')
+    {
+
+        int a;
+        int n;
+        int m;
+        printf("请输入一个正整数:\n");
+        scanf("%d", &a);
+        if (a <= 0)
         {
-            for(m=1;m<=n;m++)
+            printf("Care for mentally retarded children,we stay together.You are such a sweet little fool.");
+            return;
+        }
+        else {
+            for (int n = 1;n <= a;n++)
             {
-                printf("%d*%d=%d\t",m,n,m*n);
+                for (m = 1;m <= n;m++)
+                {
+                    printf("%d*%d=%d\t", m, n, m * n);
+                }
             }
         }
-    }
-}
-
-
-
-}
-
-
-
-int main()
-{
-//设置正确密码
- char*rightpassword="11314";
-int flag=0;
-for(int i=1;i<=3;i++)
-{
-    printf("请输入密码:\n");
-    char password[100];
-    scanf("%s",password);
-if(judge(password,rightpassword)==1)
-{
-printf("登录成功\n");
-flag=1;
-break;
-}
-else
-{
-    if(i==3)
-    {
-        printf("you are a bad girl");
-        return 0;
+    
     }
     else
     {
-        printf("用户名或密码输入错误，还有%d次机会,请重新输入",3-i);
+        printf("输入错误请重新输入\n");
     }
 }
-}
-while(1)
+int main()
 {
-showMenu();
-int select;
-printf("请输入选择的菜单：\n");
-scanf("%d",&select);
-switch(select)
-{
-    case 1:
- fun1();
-    break;
-    case 2:
-fun2();
-    break;
-    case 3:
-fun3();
-    break;
-    case 4:
-    fun4();
-    case 5:
-    printf("退出运行\n");
-    break;
-}
-    if(select==5)
+    //设置正确密码
+    char* rightpassword = "11314";
+    int flag = 0;
+    for (int i = 1;i <= 3;i++)
     {
-        break;
+        printf("请输入密码:\n");
+        char password[100];
+        scanf("%s", password);
+        if (judge(password, rightpassword) == 1)
+        {
+            printf("登录成功\n");
+            flag = 1;
+            break;
+        }
+        else
+        {
+            if (i == 3)
+            {
+                printf("you are a bad girl");
+                return 0;
+            }
+            else
+            {
+                printf("用户名或密码输入错误，还有%d次机会,请重新输入", 3 - i);
+            }
+        }
     }
-}
-
-
+    while (1)
+    {
+        showMenu();
+        int select;
+        printf("请输入选择的菜单：\n");
+        scanf("%d", &select);
+        switch (select)
+        {
+        case 1:
+            fun1();
+            break;
+        case 2:
+            fun2();
+            break;
+        case 3:
+            fun3();
+            break;
+        case 4:
+            fun4();
+        case 5:
+            printf("退出运行\n");
+            break;
+            
+        }
+        if (select == 5)
+        {
+            break;
+        }
+        if (select > 5 || select < 1)
+        {
+            printf("输入错误请重新输入\n");
+            
+        }
+    }
     return 0;
 }
