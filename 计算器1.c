@@ -1,7 +1,7 @@
 #include<stdio.h>
 int main()
 {
-char a;
+	char a;
 	printf("请输入你想要使用的类型 加法A,减法S,乘法M,除法D:\n");
 	scanf(" %c", &a);
 	printf("类型为：%c\n", a);
@@ -24,9 +24,9 @@ char a;
 		break;
 
 	case 'D':
-		if(c==0)
+		if (c == 0)
 		{
-			printf("错误\n");
+			printf("输入错误\n");
 			return 1;
 		}
 		else
@@ -34,7 +34,10 @@ char a;
 			res = b / c;
 		}
 		break;
+	default:
+		printf("输入错误\n");
+		return 0;
 	}
 	printf("结果为：%f\n", res);
-    return 0;
+	return 0;
 }
