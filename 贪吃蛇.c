@@ -2,7 +2,6 @@
 struct snake
 {
 	int len;
-
 };
 int main()
 {
@@ -20,7 +19,5 @@ int main()
 		}
 		s1.len = food + s1.len;
 	}
-
-
 	return 0;
 }
